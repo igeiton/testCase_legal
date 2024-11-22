@@ -1,0 +1,296 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(../fonts/proximanova_regular.ttf);
+}
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url(../fonts/proximanova_bold.otf);
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  max-width: 768px;
+  padding: 16px 0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Proxima Nova";
+}
+.card hr {
+  height: 1px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1019607843);
+}
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 75px;
+  margin: 8px 24px 20px 24px;
+  font-size: 14px;
+}
+.card__hr {
+  margin: 0 24px;
+}
+.card__body {
+  position: relative;
+  margin: 20px 24px 0 24px;
+  padding-bottom: 24px;
+}
+.card__body__text {
+  transition: ease-out 0.3s;
+  max-height: 125px;
+  z-index: 1;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+.card__body .expand_arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.0784313725);
+  background-color: #ffffff;
+  transition: ease-out 0.3s;
+}
+.card__body .expand_arrow:hover {
+  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.1254901961);
+  cursor: pointer;
+}
+.card__body .expand_arrow.expanded {
+  transform: translate(-50%, 50%) rotate(-180deg);
+}
+.card__footer {
+  position: relative;
+  display: flex;
+  padding: 24px 24px 24px 22px;
+  background-color: #f9f9fa;
+}
+.card__footer.shadow:before {
+  content: "";
+  position: absolute;
+  border: 1px solid #f9f9fa;
+  top: 0;
+  left: 2.5%;
+  width: 95%;
+  box-shadow: 0px -24px 17.5px 17.5px #ffffff;
+}
+.card__footer:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #3498db;
+}
+
+.user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+.user__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.user__info__name {
+  font-family: "Proxima Nova Bold";
+}
+.user .mobile {
+  display: none;
+  color: rgba(0, 0, 0, 0.2);
+}
+.user .mobile .profit {
+  color: #62b435;
+}
+.user .mobile .equally {
+  color: rgba(0, 0, 0, 0.4);
+}
+.user .mobile .loss {
+  color: #f64747;
+}
+.user .mobile .percent {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+}
+.stats.mobile {
+  display: none;
+}
+.stats__profit {
+  width: 64px;
+  font-weight: 600;
+  color: #62b435;
+}
+.stats__equally {
+  width: 64px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+.stats__loss {
+  width: 64px;
+  font-weight: 600;
+  color: #f64747;
+}
+.stats__percent {
+  width: 64px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.stats__percent__number {
+  font-weight: 600;
+  color: #62b435;
+}
+.stats__profit_sum {
+  width: 64px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.stats__profit_sum__number {
+  font-weight: 600;
+  color: #62b435;
+}
+
+.bet {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+.bet__info {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.bet__info .forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Proxima Nova Bold";
+}
+.bet__info .forecast__title {
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.bet__info .forecast__info {
+  font-size: 18px;
+  line-height: 20px;
+}
+.bet__info .ratio {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 12px;
+}
+.bet__info .ratio__info {
+  display: flex;
+  flex-direction: column;
+}
+.bet__info .ratio__info__text {
+  font-size: 12px;
+}
+.bet__info .ratio__info__text.mobile {
+  display: none;
+}
+.bet__info .ratio__info__number {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+.bet__info .ratio__info__number.mobile {
+  display: none;
+}
+.bet__btn {
+  min-width: 140px;
+  font-size: 14px;
+  padding: 16px 12px;
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  background-color: #3498db;
+  transition: ease-in 0.1s;
+}
+.bet__btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media (max-width: 744px) {
+  .card {
+    max-width: 351px;
+    padding: 16px 0;
+  }
+  .card__hr {
+    margin: 0 16px;
+  }
+  .card__header {
+    gap: 8px;
+    margin: 0px 16px 16px 16px;
+  }
+  .card__body {
+    margin: 16px 16px 0 16px;
+  }
+  .card__footer {
+    padding: 16px 16px 16px 14px;
+  }
+  .card .user__info__activity {
+    display: none;
+  }
+  .card .user__info__activity.mobile {
+    display: block;
+  }
+  .card .stats {
+    display: none;
+  }
+  .card .stats.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .card .stats.mobile .days {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .card .stats.mobile .number {
+    color: #62b435;
+  }
+  .card .bet {
+    flex-wrap: wrap;
+  }
+  .card .bet__info {
+    align-items: end;
+  }
+  .card .bet__info .forecast__info {
+    font-size: 16px;
+  }
+  .card .bet__info .ratio__info__text {
+    display: none;
+  }
+  .card .bet__info .ratio__info__text.mobile {
+    display: block;
+  }
+  .card .bet__info .ratio__info__number {
+    display: none;
+  }
+  .card .bet__info .ratio__info__number.mobile {
+    display: block;
+    font-size: 18px;
+  }
+  .card .bet__btn {
+    width: 100%;
+  }
+}

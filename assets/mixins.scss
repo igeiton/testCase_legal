@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(../fonts/proximanova_regular.ttf);
+}
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url(../fonts/proximanova_bold.otf);
+}
+
+@mixin ProximaNova {
+  font-family: "Proxima Nova";
+}
+
+@mixin ProximaNovaBold {
+  font-family: "Proxima Nova Bold";
+}
